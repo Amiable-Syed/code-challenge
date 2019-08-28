@@ -6,7 +6,7 @@ export const ComponentA = (props) => {
         <div className="App-header">
             <input readOnly value={props.value} onChange={()=>props.handleChange} />
             <button onClick={props.sendText}> Send Text </button>
-            <button onClick={props.getInterface}> Get Interface </button>
+            <button onClick={props.getInterface(props.value)}> Get Interface </button>
         </div>
     );
   }
