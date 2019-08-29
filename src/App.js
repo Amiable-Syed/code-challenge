@@ -11,7 +11,7 @@ class App extends React.Component {
       value:  'www.placeholder.com',
       forwardValue:"",
       data:{},
-      switch:true
+      switchComponents:true
     };
   }
 
@@ -24,7 +24,7 @@ class App extends React.Component {
       try{
         const response = await fetch(this.state.value);
         const json = await response.json();
-        this.callback(json);
+        this.setDataCallback(json);
       }catch(error){
         alert("Please provide proper url")
       }
@@ -35,9 +35,9 @@ class App extends React.Component {
    * callback function to open component2 and send data 
    * to the display area
    */
-  callback=(data)=>{
+  setDataCallback=(data)=>{
     this.setState({
-      switch: false,
+      switchComponents: false,
       data: data
     })
   }
@@ -71,7 +71,7 @@ class App extends React.Component {
    */
   sendBack=()=>{
       this.setState({
-        switch:true,
+        switchComponents:true,
         data:[]
       },()=>{
         alert("link modified")
@@ -82,7 +82,7 @@ class App extends React.Component {
    */
   switchComponent=()=>{
       this.setState({
-        switch: this.state.switch?false:true
+        switchComponents: this.state.switchComponents?false:true
       })
     
 
@@ -92,13 +92,13 @@ class App extends React.Component {
 
     return (
       <>
-        {this.state.switch?
+        {this.state.switchComponents?
         <ComponentA 
           switchComponent={this.switchComponent}
           value={this.state.value} 
           getInterface={this.getInterface}
           sendText={this.sendText} 
-          callback={this.callback}
+          callback={this.setDataCallback}
         />
         :
         <ComponentB 
