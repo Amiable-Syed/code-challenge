@@ -10,7 +10,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 92vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,4 +31,52 @@
   to {
     transform: rotate(360deg);
   }
+}
+.header {
+  text-align: center;
+  align-content: center;
+  margin: 0 auto;
+}
+
+.textfield{
+  padding:8px;
+  display:block;
+  border:none;
+  border-bottom:1px solid #ccc;
+  width:50%
+}
+
+.button{
+  border:none;
+  display:inline-block;
+  padding:8px 16px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  background-color:#2196f3;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap;
+  margin-left: 1px;
+}
+.button:hover{
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+}
+.button{
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}   
+.button,.button:disabled:hover{
+  box-shadow:none
+}
+
+.content{
+    display: block;
+    width: 50%;
+    margin: -5%;
 }
